@@ -1,0 +1,15 @@
+{
+    "cSpell.words": [
+        "distcube",
+        "flequals",
+        "force",
+        "grav",
+        "ndim"
+    ],
+    "files.associations": {
+        "initializer_list": "cpp",
+        "utility": "cpp",
+        "iostream": "cpp",
+        "iosfwd": "cpp"
+    }
+}

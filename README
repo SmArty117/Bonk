@@ -1,0 +1,12 @@
+I set myself the task of writing a program that can simulate a set of given particles bounded by a set of given walls, moving and colliding elastically in 2 dimensions.
+
+I was able to reuse much of the code written for the previous exercise. Namely, I reused the Vector and Object classes, respectively describing (geometric) vectors and operations with them (addition, scalar multiplication, inner product, comparison) and the particles of the simulation (with position, velocity, radius and mass).
+
+I had to write the Wall class, representing walls (unsurprisingly) that have two ends, a velocity and aren't affected by particle collisions. I also had to write the collision detection and managing functions, found in the "physics.cpp" file. This is performed using fairly simple methods, and some maths from Wikipedia. There was a problem at higher speeds: the particles would penetrate into each other and get stuck together, continuously "colliding". To solve this, I added a bit to the collision checking function that moves them outwards by however much is needed to get them not intersecting again. While this is crude, it shouldn't produce very large inaccuracies on small enough timesteps.
+
+I also wrote three Python scripts, one for generating random particles given some parameters, and two for plotting. "animate.py" shows just the movements of the particles and walls, while "extra_anim.py" shows the kinetic energy of the particles, as well as the total, in the lower plot.
+
+I checked the collision mechanisms and other operations individually. Then, I made several observations, in different configurations:
+    1. when the walls were stationary, the total KE is conserved
+    2. when a wall is moving inwards (like a piston), the total KE is growing. Microscopically, this is due to the particles colliding with it gaining a larger normal component of the velocity than they had before the collision. Macroscopically, this is like adiabatic compression.
+    3. The inverse occurs when the wall is moving away from the particles

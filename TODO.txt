@@ -1,0 +1,20 @@
+- modify the object class to have radii
+rename it to particle
+- remove the acceleration
+- delete leapfrog, total force and grav force functions
+- modify simpleUpdate to not care about acceleration
+- add function to see if two particles in the same place
+- modify the particle class to use inverse mass instead of mass
+- write collide() function
+- write in the walls
+check wall collision
+perform wall collisions
+- move the walls in simpleUpdate()
+- output the walls
+- modify file reading to read radii
+- as well and calculate inverse mass
+- read in the walls
+
+make the plot not plot trajectories
+except maybe of one particle
+plot and animate the walls
